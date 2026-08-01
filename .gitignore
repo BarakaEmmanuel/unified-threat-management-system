@@ -1,0 +1,13 @@
+# Python build & virtual env
+venv/
+__pycache__/
+*.pyc
+
+# Rust build outputs & binaries
+target/
+collector
+
+# Local SQLite Database & Logs
+*.db
+utm_security.db
+*.log

@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+
+if [ "$EUID" -ne 0 ]; then
+  echo "[-] Error: UTM requires root privileges."
+  echo "    Please run with: sudo -E ./utm"
+  exit 1
+fi
+
+echo "[*] Verifying system dependencies..."
+MISSING_DEPS=0
+
+check_cmd() {
+    if ! command -v "$1" &> /dev/null; then
+        echo "[-] Missing system dependency: $1"
+        MISSING_DEPS=1
+    fi
+}
+
+# Check for core system packages
+check_cmd python3
+check_cmd cargo
+check_cmd iptables
+
+# Check specifically for the python3-venv package (required on Debian/Ubuntu)
+if ! python3 -c "import venv" &> /dev/null; then
+    echo "[-] Missing system dependency: python3-venv"
+    MISSING_DEPS=1
+fi
+
+if [ $MISSING_DEPS -eq 1 ]; then
+    echo ""
+    echo "[-] Please install the missing dependencies before continuing."
+    echo "    Hint: sudo apt update && sudo apt install python3 python3-venv cargo iptables"
+    exit 1
+fi
+
+# 1. Setup Python Virtual Environment & Requirements
+if [ ! -f "./venv/bin/python3" ]; then
+    echo "[+] Virtual environment not found. Creating './venv'..."
+    python3 -m venv venv
+    
+    if [ -f "requirements.txt" ]; then
+        echo "[+] Installing Python dependencies from requirements.txt..."
+        ./venv/bin/pip install -r requirements.txt
+    fi
+else
+    echo "[+] Virtual environment found."
+fi
+
+# Define Python binary path
+if [ -n "$VIRTUAL_ENV" ]; then
+    PYTHON_BIN="$VIRTUAL_ENV/bin/python3"
+else
+    PYTHON_BIN="./venv/bin/python3"
+fi
+
+# 2. Setup Rust Requirements
+if [ ! -f "./collector" ] && [ -f "Cargo.toml" ]; then
+    echo "[+] Rust collector binary not found. Building from source..."
+    # Build as the original user (if using sudo) so target/ isn't locked to root
+    if [ -n "$SUDO_USER" ]; then
+        sudo -u "$SUDO_USER" cargo build --release
+    else
+        cargo build --release
+    fi
+    
+    # Move the compiled binary to the root directory
+    if [ -f "./target/release/collector" ]; then
+        cp ./target/release/collector ./collector
+        echo "[+] Rust build complete and collector deployed."
+    else
+        echo "[-] Rust build failed. Could not find target/release/collector."
+        exit 1
+    fi
+else
+    echo "[+] Rust collector binary found."
+fi
+
+cleanup() {
+    echo -e "\n[+] Shutting down UTM Security Stack..."
+    pkill -f utm_daemon.py 2>/dev/null
+    pkill -f ueba_engine.py 2>/dev/null
+    pkill -f collector 2>/dev/null
+    echo "[+] System offline."
+    exit 0
+}
+
+trap cleanup SIGINT SIGTERM EXIT
+
+# 3. Initialize DB tables (Clean schema)
+echo "[+] Initializing database..."
+$PYTHON_BIN -c "import database; database.init_db()"
+
+# 4. Start Layer 4 Daemon in background
+echo "[+] Starting Layer 4 Kernel Firewall Daemon..."
+$PYTHON_BIN utm_daemon.py > /dev/null 2>&1 &
+
+# 5. Open GUI Dashboard (GUI will manage login & AI pipeline)
+echo "[+] Opening UTM Security GUI..."
+$PYTHON_BIN gui_main.py
