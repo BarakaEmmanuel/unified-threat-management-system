@@ -18,7 +18,6 @@ check_cmd() {
 
 # Check for core system packages
 check_cmd python3
-check_cmd cargo
 check_cmd iptables
 
 # Check specifically for the python3-venv package (required on Debian/Ubuntu)
@@ -27,10 +26,23 @@ if ! python3 -c "import venv" &> /dev/null; then
     MISSING_DEPS=1
 fi
 
+# Locate cargo (checking both system path and user's Rustup path under sudo)
+CARGO_CMD=""
+if command -v cargo &> /dev/null; then
+    CARGO_CMD="cargo"
+elif [ -n "$SUDO_USER" ] && [ -f "/home/$SUDO_USER/.cargo/bin/cargo" ]; then
+    CARGO_CMD="/home/$SUDO_USER/.cargo/bin/cargo"
+fi
+
+if [ -z "$CARGO_CMD" ]; then
+    echo "[-] Missing system dependency: cargo"
+    MISSING_DEPS=1
+fi
+
 if [ $MISSING_DEPS -eq 1 ]; then
     echo ""
     echo "[-] Please install the missing dependencies before continuing."
-    echo "    Hint: sudo apt update && sudo apt install python3 python3-venv cargo iptables"
+    echo "    Hint: sudo apt update && sudo apt install python3 python3-venv iptables"
     exit 1
 fi
 
@@ -41,7 +53,11 @@ if [ ! -f "./venv/bin/python3" ]; then
     
     if [ -f "requirements.txt" ]; then
         echo "[+] Installing Python dependencies from requirements.txt..."
-        ./venv/bin/pip install -r requirements.txt
+        if [ -n "$SUDO_USER" ]; then
+            sudo -u "$SUDO_USER" ./venv/bin/pip install -r requirements.txt
+        else
+            ./venv/bin/pip install -r requirements.txt
+        fi
     fi
 else
     echo "[+] Virtual environment found."
@@ -57,16 +73,16 @@ fi
 # 2. Setup Rust Requirements
 if [ ! -f "./collector" ] && [ -f "Cargo.toml" ]; then
     echo "[+] Rust collector binary not found. Building from source..."
-    # Build as the original user (if using sudo) so target/ isn't locked to root
     if [ -n "$SUDO_USER" ]; then
-        sudo -u "$SUDO_USER" cargo build --release
+        sudo -u "$SUDO_USER" $CARGO_CMD build --release
     else
-        cargo build --release
+        $CARGO_CMD build --release
     fi
     
     # Move the compiled binary to the root directory
     if [ -f "./target/release/collector" ]; then
         cp ./target/release/collector ./collector
+        chmod +x ./collector
         echo "[+] Rust build complete and collector deployed."
     else
         echo "[-] Rust build failed. Could not find target/release/collector."

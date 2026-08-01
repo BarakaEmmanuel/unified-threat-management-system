@@ -58,5 +58,6 @@ Traffic that does not fit within this baseline is flagged and blocked keeping th
 
 ## Running the system
 In order to activate and run this system, run the following command in your Terminal
+chmod +x utm
 sudo ./utm
 
