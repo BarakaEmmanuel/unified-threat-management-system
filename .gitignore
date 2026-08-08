@@ -13,3 +13,7 @@ utm_security.db
 *.log
 *.db-wal
 *.db-shm
+
+# Report files
+Report/
+report/
