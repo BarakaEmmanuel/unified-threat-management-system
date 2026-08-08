@@ -30,20 +30,36 @@ class UTMDaemon:
         logging.info("Shutdown signal received. Stopping UTM Daemon...")
         self.running = False
 
+    def sync_initial_state(self):
+        """Loads existing active database rules into memory at startup to maintain parity."""
+        try:
+            all_db_rules = database.get_ip_rules()
+            self.enforced_ips = {rule[0] for rule in all_db_rules if len(rule) > 0}
+            logging.info(f"Initialized daemon state with {len(self.enforced_ips)} existing rule(s) from database.")
+        except Exception as e:
+            logging.error(f"Failed to synchronize initial state from database: {e}")
+
     def sync_rules(self):
         """Syncs newly added or modified rules from SQLite to the firewall kernel."""
         unapplied_rules = database.get_unapplied_ip_rules()
-        for ip, rule_type in unapplied_rules:
+        for rule in unapplied_rules:
+            # Support both (ip, rule_type) and (ip, dest_ip, rule_type) tuple structures
+            if len(rule) >= 3:
+                ip, dest_ip, rule_type = rule[0], rule[1], rule[2]
+            else:
+                ip, rule_type = rule[0], rule[1]
+                dest_ip = "N/A"
+
             success = False
             if rule_type in ("BLACKLIST", "BLOCKED"):
-                success = self.fw.block_ip(ip)
+                success = self.fw.block_ip(ip, dest_ip=dest_ip)
             elif rule_type == "WHITELIST":
-                success = self.fw.allow_ip(ip)
+                success = self.fw.allow_ip(ip, dest_ip=dest_ip)
 
             if success:
                 database.mark_rule_as_active(ip)
                 self.enforced_ips.add(ip)
-                logging.info(f"Enforced kernel rule [{rule_type}] for IP: {ip}")
+                logging.info(f"Enforced kernel rule [{rule_type}] for IP: {ip} (Dest: {dest_ip})")
 
     def check_ttl_expirations(self):
         """Checks for temporary blocks that reached their 15-minute expiration."""
@@ -70,6 +86,9 @@ class UTMDaemon:
         """Main execution loop."""
         logging.info("Starting Layer 4 Enforcement & Execution Daemon...")
         database.init_db()
+        
+        # Phase 1: Seed in-memory tracking before entering loop
+        self.sync_initial_state()
 
         while self.running:
             try:

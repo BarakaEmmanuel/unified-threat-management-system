@@ -11,3 +11,5 @@ collector
 *.db
 utm_security.db
 *.log
+*.db-wal
+*.db-shm

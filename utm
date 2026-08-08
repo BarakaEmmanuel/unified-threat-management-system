@@ -96,6 +96,7 @@ cleanup() {
     echo -e "\n[+] Shutting down UTM Security Stack..."
     pkill -f utm_daemon.py 2>/dev/null
     pkill -f ueba_engine.py 2>/dev/null
+    pkill -f device_scanner.py 2>/dev/null
     pkill -f collector 2>/dev/null
     echo "[+] System offline."
     exit 0
@@ -111,6 +112,10 @@ $PYTHON_BIN -c "import database; database.init_db()"
 echo "[+] Starting Layer 4 Kernel Firewall Daemon..."
 $PYTHON_BIN utm_daemon.py > /dev/null 2>&1 &
 
-# 5. Open GUI Dashboard (GUI will manage login & AI pipeline)
+# 5. Start Device Scanner Daemon in background
+echo "[+] Starting Network Device Scanner..."
+$PYTHON_BIN device_scanner.py > /dev/null 2>&1 &
+
+# 6. Open GUI Dashboard (GUI will manage login & AI pipeline)
 echo "[+] Opening UTM Security GUI..."
 $PYTHON_BIN gui_main.py

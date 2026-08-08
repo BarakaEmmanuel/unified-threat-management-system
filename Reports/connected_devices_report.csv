@@ -1,0 +1,74 @@
+Last Seen,IP Address,MAC Address,Vendor OUI,Hostname,Detected OS,Ingress Bytes,Egress Bytes,Total Traffic Volume,Active Policy Status
+2026-08-06 10:52:46,192.168.74.203,LOCAL_HOST,Unknown,insight,Linux OS,147213,296263,433.08 KB,ACTIVE
+2026-08-05 16:40:34,192.168.74.36,a2:6e:75:d3:c8:fe,Unknown,Unknown Device,Unknown OS,3296,28639,31.19 KB,ACTIVE
+2026-08-06 10:52:46,192.168.74.173,6c:3b:6b:d4:c5:fa,Unknown,Linux OS Endpoint,Linux OS,12218,13014,24.64 KB,ACTIVE
+2026-08-06 10:52:47,192.168.72.1,90:ec:77:91:21:a9,Unknown,_gateway,macOS / iOS,13270,11347,24.04 KB,ACTIVE
+2026-08-06 10:52:27,192.168.74.85,d0:21:f9:c1:e9:22,Unknown,Unknown Device,Unknown OS,9126,12258,20.88 KB,ACTIVE
+2026-08-06 10:52:27,192.168.74.98,f4:92:bf:20:30:79,Unknown,Unknown Device,Unknown OS,7930,10460,17.96 KB,ACTIVE
+2026-08-06 10:52:46,192.168.74.200,82:e3:dd:ba:07:d2,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,8063,8886,16.55 KB,ACTIVE
+2026-08-06 10:52:46,192.168.74.150,04:0e:3c:16:1d:f3,Unknown,WORKGROUP,Windows OS,7808,4820,12.33 KB,ACTIVE
+2026-08-05 16:40:34,192.168.74.174,48:89:e7:94:89:b9,Unknown,Unknown Device,Unknown OS,2612,9805,12.13 KB,ACTIVE
+2026-08-06 10:52:47,192.168.74.65,96:82:41:16:86:89,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,5148,4614,9.53 KB,ACTIVE
+2026-08-05 16:43:46,192.168.74.214,48:51:b7:dd:fa:a9,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,4891,4214,8.89 KB,ACTIVE
+2026-08-06 10:52:46,192.168.74.242,0e:6b:ab:8e:be:ff,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,4374,3786,7.97 KB,ACTIVE
+2026-08-06 10:52:47,192.168.72.17,78:45:58:5f:ff:c8,Unknown,Unknown Device,Unknown OS,2940,4324,7.09 KB,ACTIVE
+2026-08-05 16:43:46,192.168.74.248,8a:61:de:2f:ee:d3,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,3610,3192,6.64 KB,ACTIVE
+2026-08-05 16:43:46,192.168.74.195,9e:57:14:06:ff:d1,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,3504,3200,6.55 KB,ACTIVE
+2026-08-05 16:43:48,192.168.74.244,00:db:df:74:ba:e4,Unknown,Unknown Device,Unknown OS,3438,3066,6.35 KB,ACTIVE
+2026-08-06 10:27:17,192.168.74.130,8c:c6:81:d3:f3:6f,Unknown,Unknown Device,Unknown OS,6136,261,6.25 KB,ACTIVE
+2026-08-06 10:52:47,192.168.74.50,5c:c5:d4:93:df:f0,Unknown,Apple Endpoint,macOS / iOS,5962,0,5.82 KB,ACTIVE
+2026-08-06 10:52:48,192.168.74.211,f4:96:34:9f:72:02,Unknown,Unknown Device,Unknown OS,2525,1027,3.47 KB,ACTIVE
+2026-08-06 09:38:47,192.168.74.197,38:ba:f8:76:1a:06,Unknown,Unknown Device,Unknown OS,2068,1084,3.08 KB,ACTIVE
+2026-08-05 16:43:46,192.168.74.9,56:4a:f0:5a:c6:f9,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,1632,1484,3.04 KB,ACTIVE
+2026-08-06 10:52:46,192.168.74.251,6e:15:1c:6c:75:3a,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,1028,861,1.84 KB,ACTIVE
+2026-08-06 10:52:46,192.168.74.109,66:34:80:34:46:ec,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,542,360,902.00 B,ACTIVE
+2026-08-05 15:56:59,192.168.74.182,e8:2a:ea:83:6c:ba,Unknown,Unknown Device,Unknown OS,703,196,899.00 B,ACTIVE
+2026-08-05 15:57:01,192.168.74.118,b6:08:c4:7e:83:1e,Unknown,Unknown Device,Unknown OS,795,0,795.00 B,ACTIVE
+2026-08-05 16:02:52,192.168.72.5,96:22:b4:f0:f4:ae,Unknown,Unknown Device,Unknown OS,0,636,636.00 B,ACTIVE
+2026-08-06 10:52:28,192.168.74.236,da:72:e4:71:1e:e5,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
+2026-08-06 10:52:27,192.168.74.212,4c:63:71:8f:8d:12,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
+2026-08-05 15:41:50,192.168.74.15,ca:6e:53:32:47:d5,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
+2026-08-05 15:41:50,192.168.74.48,f0:79:e8:5c:d3:97,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
+2026-08-05 15:41:49,192.168.74.35,ba:90:66:51:a0:5a,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
+2026-08-06 14:31:39,192.168.74.203,LOCAL_HOST,Unknown,insight,Linux OS,626181,1860788,2.37 MB,ACTIVE
+2026-08-06 14:31:40,192.168.72.1,90:ec:77:91:21:a9,Unknown,_gateway,macOS / iOS,54903,49940,102.39 KB,ACTIVE
+2026-08-06 14:31:39,192.168.74.173,6c:3b:6b:d4:c5:fa,Unknown,Linux OS Endpoint,Linux OS,27046,28755,54.49 KB,ACTIVE
+2026-08-06 14:31:41,192.168.72.154,f8:16:54:b2:4b:b1,Unknown,Unknown Device,Unknown OS,30524,16200,45.63 KB,ACTIVE
+2026-08-06 14:28:43,192.168.74.85,d0:21:f9:c1:e9:22,Unknown,Unknown Device,Unknown OS,18902,25624,43.48 KB,ACTIVE
+2026-08-06 14:28:23,192.168.74.98,f4:92:bf:20:30:79,Unknown,Unknown Device,Unknown OS,17510,23900,40.44 KB,ACTIVE
+2026-08-06 14:31:39,192.168.74.200,82:e3:dd:ba:07:d2,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,19197,20320,38.59 KB,ACTIVE
+2026-08-06 14:31:39,192.168.74.150,04:0e:3c:16:1d:f3,Unknown,WORKGROUP,Windows OS,20132,13206,32.56 KB,ACTIVE
+2026-08-05 16:40:34,192.168.74.36,a2:6e:75:d3:c8:fe,Unknown,Unknown Device,Unknown OS,3296,28639,31.19 KB,ACTIVE
+2026-08-06 14:28:43,192.168.72.17,78:45:58:5f:ff:c8,Unknown,Unknown Device,Unknown OS,11822,17708,28.84 KB,ACTIVE
+2026-08-06 13:32:22,192.168.74.242,0e:6b:ab:8e:be:ff,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,12957,12391,24.75 KB,ACTIVE
+2026-08-06 14:31:39,192.168.74.16,f4:d6:20:30:63:7b,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,12200,11984,23.62 KB,ACTIVE
+2026-08-06 13:32:22,192.168.74.128,22:9a:72:92:b6:16,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,8010,8318,15.95 KB,ACTIVE
+2026-08-06 14:31:41,192.168.74.211,f4:96:34:9f:72:02,Unknown,Unknown Device,Unknown OS,14977,1027,15.63 KB,ACTIVE
+2026-08-06 14:31:39,192.168.74.214,48:51:b7:dd:fa:a9,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,8248,7453,15.33 KB,ACTIVE
+2026-08-06 14:31:39,192.168.74.195,9e:57:14:06:ff:d1,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,6368,6106,12.18 KB,ACTIVE
+2026-08-05 16:40:34,192.168.74.174,48:89:e7:94:89:b9,Unknown,Unknown Device,Unknown OS,2612,9805,12.13 KB,ACTIVE
+2026-08-06 14:31:41,192.168.72.169,58:a0:23:1d:d7:60,Unknown,Unknown Device,Unknown OS,10538,376,10.66 KB,ACTIVE
+2026-08-06 13:28:31,192.168.74.65,96:82:41:16:86:89,Unknown,Unknown Device,Unknown OS,5530,5040,10.32 KB,ACTIVE
+2026-08-05 16:43:46,192.168.74.248,8a:61:de:2f:ee:d3,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,3610,3192,6.64 KB,ACTIVE
+2026-08-05 16:43:48,192.168.74.244,00:db:df:74:ba:e4,Unknown,Unknown Device,Unknown OS,3438,3066,6.35 KB,ACTIVE
+2026-08-06 10:27:17,192.168.74.130,8c:c6:81:d3:f3:6f,Unknown,Unknown Device,Unknown OS,6136,261,6.25 KB,ACTIVE
+2026-08-06 14:31:39,192.168.73.223,d2:3c:38:4e:a0:a6,Unknown,HP-PROBOOK,Windows OS,2994,3388,6.23 KB,ACTIVE
+2026-08-06 13:28:30,192.168.74.50,5c:c5:d4:93:df:f0,Unknown,Apple Endpoint,macOS / iOS,6270,0,6.12 KB,ACTIVE
+2026-08-06 14:31:39,192.168.73.12,f8:e4:e3:e8:54:3b,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,3024,2916,5.80 KB,ACTIVE
+2026-08-06 14:31:39,192.168.74.230,9e:2c:a0:0d:8a:8c,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,3025,2813,5.70 KB,ACTIVE
+2026-08-06 14:31:39,192.168.74.124,8a:28:d1:42:a5:66,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,2951,2783,5.60 KB,ACTIVE
+2026-08-06 14:31:39,192.168.72.138,9c:7b:ef:34:a2:27,Unknown,WORKGROUP,Windows OS,2994,2541,5.41 KB,ACTIVE
+2026-08-06 09:38:47,192.168.74.197,38:ba:f8:76:1a:06,Unknown,Unknown Device,Unknown OS,2068,1084,3.08 KB,ACTIVE
+2026-08-06 14:29:04,192.168.73.35,78:e3:b5:ba:ba:ba,Unknown,Unknown Device,Unknown OS,1644,1483,3.05 KB,ACTIVE
+2026-08-05 16:43:46,192.168.74.9,56:4a:f0:5a:c6:f9,Unknown,Linux / Unix / Mobile Endpoint,Linux / Unix / Mobile,1632,1484,3.04 KB,ACTIVE
+2026-08-06 10:57:05,192.168.74.251,6e:15:1c:6c:75:3a,Unknown,Unknown Device,Unknown OS,1102,1025,2.08 KB,ACTIVE
+2026-08-06 13:28:31,192.168.74.109,66:34:80:34:46:ec,Unknown,Unknown Device,Unknown OS,924,786,1.67 KB,ACTIVE
+2026-08-06 14:24:39,192.168.73.65,b4:69:21:a1:01:f8,Unknown,Unknown Device,Unknown OS,0,1346,1.31 KB,ACTIVE
+2026-08-05 15:56:59,192.168.74.182,e8:2a:ea:83:6c:ba,Unknown,Unknown Device,Unknown OS,703,196,899.00 B,ACTIVE
+2026-08-05 15:57:01,192.168.74.118,b6:08:c4:7e:83:1e,Unknown,Unknown Device,Unknown OS,795,0,795.00 B,ACTIVE
+2026-08-05 16:02:52,192.168.72.5,96:22:b4:f0:f4:ae,Unknown,Unknown Device,Unknown OS,0,636,636.00 B,ACTIVE
+2026-08-06 10:52:28,192.168.74.236,da:72:e4:71:1e:e5,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
+2026-08-06 10:52:27,192.168.74.212,4c:63:71:8f:8d:12,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
+2026-08-05 15:41:50,192.168.74.15,ca:6e:53:32:47:d5,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
+2026-08-05 15:41:50,192.168.74.48,f0:79:e8:5c:d3:97,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
+2026-08-05 15:41:49,192.168.74.35,ba:90:66:51:a0:5a,Unknown,Unknown Device,Unknown OS,0,0,0.00 B,ACTIVE
